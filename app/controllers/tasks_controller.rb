@@ -3,6 +3,10 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def show
+    @task = Task.find(params[:id])
+  end
+
   def new
   end
 
@@ -12,4 +16,5 @@ class TasksController < ApplicationController
     task.save
     redirect_to '/tasks'
   end
+
 end
