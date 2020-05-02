@@ -29,4 +29,8 @@ class TasksController < ApplicationController
     redirect_to "/tasks/#{task.id}"
   end
 
+  def destroy
+    Task.destroy(params[:id])
+    redirect_to '/tasks'
+  end
 end
